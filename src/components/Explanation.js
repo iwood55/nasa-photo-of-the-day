@@ -1,0 +1,12 @@
+import React from 'react'
+
+function Explanation(props) {
+    const {explanation} = props.props;
+    return(
+        <div>
+            <p>{explanation}</p>
+        </div>
+    )
+}
+
+export default Explanation

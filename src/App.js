@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios'
-import Header from './components/header'
-import PhotoOfTheDay from './components/photo'
-import Explanation from './components/explanation'
+import Header from './components/Header'
+import PhotoOfTheDay from './components/Photo'
+import Explanation from './components/Explanation'
 
 function App() {
   const [data, setData] = useState({});
@@ -11,18 +11,18 @@ function App() {
   useEffect(() => {
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=9uyzCUM1kALA3Zs4ZbKCP5GdT3QKIZR9DhfuETOU`)
-      .then(function (response) {
-        console.log(response.data);
-        setData(response.data);
+      .then(res => {
+        console.log(res);
+        setData(res.data);
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log('error message:', error);
       })
   }, [])
   if(!data.url) {
     return(
       <h3>Loading...</h3>
-    )
+    );
   } 
   else {
     return(
@@ -33,13 +33,6 @@ function App() {
       </div>
     )
   }
-  // return (
-  //   <div className="App">
-  //     <p>
-  //       Enjoy your NASA photo of the day!!!<span role="img" aria-label='go!'>🚀</span>!
-  //     </p>
-  //   </div>
-  // );
 }
 
 export default App;
