@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from './components/Header'
 import PhotoOfTheDay from './components/Photo'
 import Explanation from './components/Explanation'
+import { MainDiv } from './components/styledComponents'
 
 function App() {
   const [data, setData] = useState({});
@@ -26,11 +27,11 @@ function App() {
   } 
   else {
     return(
-      <div className = 'App'>
+      <MainDiv className = 'App'>
         <Header props = {data}/>
         <PhotoOfTheDay props = {data}/>
         <Explanation props = {data}/>
-      </div>
+      </MainDiv>
     )
   }
 }
