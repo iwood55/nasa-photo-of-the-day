@@ -8,7 +8,7 @@ justify-content: center;
 `;
 
 const MainDiv = styled.div`
-margin: 0 15%;
+margin: 0 10%;
 `
 
 export { HeaderDiv, MainDiv };
